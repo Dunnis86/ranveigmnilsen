@@ -7,8 +7,8 @@ const Container = styled.div`
   @media(max-width: 576px){
         display: block;
         margin-bottom: 1rem;
-        padding: 0;
-  }
+        padding: 0
+        }
 `; 
 
 
