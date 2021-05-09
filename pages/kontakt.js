@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 import Container from '@/components/Container'
 
 const Grid = styled.div`
-  margin: 1rem 2rem;
   padding: auto;
   display: grid;
   grid-template-columns: 1fr;
