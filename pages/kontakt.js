@@ -34,7 +34,7 @@ const P = styled.p`
 const Form = styled.form`
     top: 6rem;
     height: 25rem;
-    width: auto;
+    width: 40%;
     z-index: 5;
     justify-self: left;
     @media(max-width: 576px) {
