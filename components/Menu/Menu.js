@@ -51,6 +51,7 @@ const A = styled.a`
     img {
       max-width: 10%;
     }
+  }
 `;
 
 const Menu = ({open}) => {
