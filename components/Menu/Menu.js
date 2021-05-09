@@ -7,6 +7,7 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   background: white;
   height: 100vh;
   text-align: left;
@@ -43,16 +44,12 @@ const StyledMenu = styled.nav`
 `;
 
 const A = styled.a`
-  justify-content: center;
-  align-content: center;
   img {
       max-width: 20%;
-      height: 20%;
     }
   @media (max-width: 576px) {
     img {
       max-width: 10%;
-      height: 10%;
     }
 `;
 

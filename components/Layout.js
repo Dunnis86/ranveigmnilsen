@@ -10,7 +10,7 @@ const Container = styled.div`
         margin-bottom: 1rem;
         padding: 0;
   }
-`;
+`; 
 
 
 export default function Layout({children}) {
