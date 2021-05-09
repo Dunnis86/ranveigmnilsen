@@ -7,8 +7,9 @@ import styled from 'styled-components'
 
 
 const Div = styled.div`
+    background-color: white;
     width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0.5rem 0rem 2rem 1rem;
@@ -46,7 +47,7 @@ const Navigation = ({props}) => {
     const [scrolled, setScrolled] = useState(false);
     const handleScroll = () => {
         const offset = window.scrollY;
-        if (offset > 1 ) {
+        if (offset > 1 & document.body.offsetHeight > ((window.innerHeight)*1.2)) {
         setScrolled(true);
         }
         else {

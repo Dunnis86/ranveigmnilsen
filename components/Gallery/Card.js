@@ -8,6 +8,7 @@ const Card = styled.div`
     transition: color 0.15s ease, border-color 0.15s ease;
     @media(max-width: 320px){
         box-shadow: 0; 
+        transition: 0;
   }
 `;
 
