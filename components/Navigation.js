@@ -47,7 +47,7 @@ const Navigation = ({props}) => {
     const [scrolled, setScrolled] = useState(false);
     const handleScroll = () => {
         const offset = window.scrollY;
-        if (offset > 1 & document.body.offsetHeight > ((window.innerHeight)*1.2)) {
+        if (offset > 1 & document.body.offsetHeight > ((window.innerHeight)*1.3)) {
         setScrolled(true);
         }
         else {

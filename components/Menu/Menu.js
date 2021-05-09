@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { bool } from 'prop-types';
+import styled from 'styled-components'
+import { bool } from 'prop-types'
 import Link from 'next/link'
 
 const StyledMenu = styled.nav`

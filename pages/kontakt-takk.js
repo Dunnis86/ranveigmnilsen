@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import Button from '../components/Button'
-import Layout from '../components/Layout'
+import Button from '@/components/Button'
+import Layout from '@/components/Layout'
 import Container from '@/components/Container'
 
 const P = styled.p`

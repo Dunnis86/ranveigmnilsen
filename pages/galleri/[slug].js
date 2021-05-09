@@ -91,15 +91,3 @@ export async function getStaticProps ({params: {slug}}) {
 
 
 export default Galleri;
-
-/*{result.map(({_id, imageUrl, title, beskrivelse}) => (
-          <ImgContainer key={_id}>
-                  <Card>
-                      <Img
-                        src={urlFor(imageUrl)
-                          .url()}
-                      />
-                  </Card>
-                  <p>Tittel: {title}</p>
-                  <p>{beskrivelse}</p>        
-        </ImgContainer>))}*/

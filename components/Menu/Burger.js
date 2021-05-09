@@ -1,6 +1,6 @@
 // Burger.styled.js
 import styled from 'styled-components'
-import { bool, func } from 'prop-types';
+import { bool, func } from 'prop-types'
 
 const StyledBurger = styled.button`
   position: absolute;
