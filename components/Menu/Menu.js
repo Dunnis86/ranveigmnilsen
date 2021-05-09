@@ -43,17 +43,16 @@ const StyledMenu = styled.nav`
 `;
 
 const A = styled.a`
-  display: flex;
   justify-content: center;
   align-content: center;
   img {
       max-width: 20%;
-      height: auto;
+      height: 20%;
     }
   @media (max-width: 576px) {
     img {
       max-width: 10%;
-      height: auto;
+      height: 10%;
     }
 `;
 
