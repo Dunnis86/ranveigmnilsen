@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Burger from '@/components/Menu/Burger';
-import Menu from '@/components/Menu/Menu';
-import { useState, useRef, useEffect } from 'react';
-import { useOnClickOutside } from '../src/hooks';
+import Burger from '@/components/Menu/Burger'
+import Menu from '@/components/Menu/Menu'
+import { useState, useRef, useEffect } from 'react'
+import { useOnClickOutside } from '../src/hooks'
 import styled from 'styled-components'
 
 
