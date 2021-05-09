@@ -8,7 +8,7 @@ const Container = styled.div`
         display: block;
         margin-bottom: 1rem;
         padding: 0
-        }
+        } 
 `; 
 
 
