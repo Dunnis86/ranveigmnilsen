@@ -1,0 +1,14 @@
+{
+    "presets": ["next/babel"],
+    "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true,
+            "preprocess": false 
+          } 
+        ],
+        "@babel/plugin-proposal-export-default-from",
+
+      ]
+  }
