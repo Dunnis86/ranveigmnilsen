@@ -5,7 +5,7 @@
       "plugins": [
         [
           "babel-plugin-styled-components",
-          { "ssr": true, "displayName": true, "preprocess": false }
+          { "ssr": true, "displayname": true, "preprocess": false }
         ],
         "@babel/plugin-proposal-export-default-from"
       ]
@@ -14,7 +14,7 @@
       "plugins": [
         [
           "babel-plugin-styled-components",
-          { "ssr": true, "displayName": true, "preprocess": false }
+          { "ssr": true, "displayname": true, "preprocess": false }
         ],
         "@babel/plugin-proposal-export-default-from"
       ],
@@ -27,7 +27,7 @@
   "plugins": [
     [
       "babel-plugin-styled-components",
-      { "ssr": true, "displayName": true, "preprocess": false }
+      { "ssr": true, "displayname": true, "preprocess": false }
     ],
     "@babel/plugin-proposal-export-default-from"
   ]
