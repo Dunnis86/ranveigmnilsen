@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Navigation from './Navigation'
+import styled from 'styled-components';
+import Navigation from './Navigation.js';
 
 const Container = styled.div`
   margin: 0 0 2rem 0;

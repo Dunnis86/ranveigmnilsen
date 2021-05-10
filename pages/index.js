@@ -1,5 +1,5 @@
-import Layout from '@/components/Layout'
-import Container from'@/components/Container'
+import Layout from '@/components/Layout.js';
+import Container from'@/components/Container.js';
 
 
 export default function Home(props) {

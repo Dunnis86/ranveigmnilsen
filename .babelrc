@@ -6,7 +6,8 @@
         [
           "babel-plugin-styled-components",
           { "ssr": true, "displayName": true, "preprocess": false }
-        ]
+        ],
+        "@babel/plugin-proposal-export-default-from"
       ]
     },
     "production": {
@@ -14,7 +15,8 @@
         [
           "babel-plugin-styled-components",
           { "ssr": true, "displayName": true, "preprocess": false }
-        ]
+        ],
+        "@babel/plugin-proposal-export-default-from"
       ],
       "presets": ["next/babel"]
     },
@@ -26,6 +28,8 @@
     [
       "babel-plugin-styled-components",
       { "ssr": true, "displayName": true, "preprocess": false }
-    ]
+    ],
+    "@babel/plugin-proposal-export-default-from"
   ]
 }
+

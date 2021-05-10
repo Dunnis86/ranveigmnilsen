@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import Burger from '@/components/Menu/Burger'
-import Menu from '@/components/Menu/Menu'
-import { useState, useRef, useEffect } from 'react'
-import { useOnClickOutside } from '../src/hooks'
-import styled from 'styled-components'
+import Link from 'next/link';
+import Burger from '@/components/Menu/Burger.js';
+import Menu from '@/components/Menu/Menu.js';
+import { useState, useRef, useEffect } from 'react';
+import { useOnClickOutside } from '../src/Hooks.js';
+import styled from 'styled-components';
 
 
 const Div = styled.div`

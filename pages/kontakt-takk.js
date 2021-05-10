@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import styled from 'styled-components'
-import Button from '@/components/Button'
-import Layout from '@/components/Layout'
-import Container from '@/components/Container'
+import Link from 'next/link';
+import styled from 'styled-components';
+import Button from '@/components/Button.js';
+import Layout from '@/components/Layout.js';
+import Container from '@/components/Container.js';
 
 const P = styled.p`
     margin-bottom: 2rem;

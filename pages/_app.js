@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styled, { createGlobalStyle } from 'styled-components'
+import Head from 'next/head';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 

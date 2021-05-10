@@ -1,11 +1,11 @@
-import client from '../client'
-import groq from 'groq'
+import client from '../client';
+import groq from 'groq';
 import { useNextSanityImage } from 'next-sanity-image';
-import Layout from '@/components/Layout'
-import Grid from '@/components/Gallery/GalleryGrid'
-import Link from 'next/link'
-import Card from '@/components/Gallery/Card'
-import Image from '@/components/Gallery/Image'
+import Layout from '@/components/Layout.js';
+import Grid from '@/components/Gallery/GalleryGrid.js';
+import Link from 'next/link';
+import Card from '@/components/Gallery/Card.js';
+import Image from '@/components/Gallery/Image.js';
 
 
 const Galleri = ({result = []}) => {

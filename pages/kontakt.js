@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
-import Button from '@/components/Button'
-import Layout from '@/components/Layout'
-import Container from '@/components/Container'
+import styled from 'styled-components';
+import Button from '@/components/Button.js';
+import Layout from '@/components/Layout.js';
+import Container from '@/components/Container.js';
 
 const Grid = styled.div`
   padding: auto;

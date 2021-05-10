@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Image from 'next/image'
+import styled from 'styled-components';
+import Image from 'next/image';
 
 const Img = styled(Image)`
     max-width: 100%;
