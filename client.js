@@ -1,4 +1,4 @@
-import sanityClient from '@sanity/client'
+import sanityClient from '@sanity/client';
 
 export default sanityClient({  
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,

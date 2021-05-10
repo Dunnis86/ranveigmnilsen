@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { bool } from 'prop-types'
-import Link from 'next/link'
+import styled from 'styled-components';
+import { bool } from 'prop-types';
+import Link from 'next/link';
 
 const StyledMenu = styled.nav`
   position: fixed;

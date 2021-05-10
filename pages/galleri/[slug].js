@@ -1,12 +1,12 @@
-import { useRouter } from 'next/router'
-import styled from 'styled-components'
-import Link from 'next/link'
-import client from '../../client'
+import { useRouter } from 'next/router';
+import styled from 'styled-components'; 
+import Link from 'next/link';
+import client from '../../client.js';
 import { useNextSanityImage } from 'next-sanity-image';
-import groq from 'groq'
-import Layout from '@/components/Layout'
-import Container from '@/components/Gallery/ImageContainer'
-import Image from '@/components/Gallery/IndividualImage'
+import groq from 'groq';
+import Layout from '@/components/Layout.js';
+import Container from '@/components/Gallery/ImageContainer.js';
+import Image from '@/components/Gallery/IndividualImage.js';
 
 const A = styled.a`
   display: block;
@@ -26,7 +26,7 @@ const A = styled.a`
 const Div = styled.div`
   @media(min-width: 576px) {
     filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
-}
+  }
 `;
 
 const Textcontainer = styled.div`
