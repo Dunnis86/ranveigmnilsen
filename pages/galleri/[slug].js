@@ -7,6 +7,7 @@ import groq from 'groq';
 import Layout from '@/components/Layout.js';
 import Container from '@/components/Gallery/ImageContainer.js';
 import Image from '@/components/Gallery/IndividualImage.js';
+import BackArrow from '@/components/Arrow.js';
 
 const A = styled.a`
   display: block;
@@ -41,7 +42,8 @@ const Galleri = ({result = []}) => {
     const { slug } = router.query
     return (
       <Layout>
-      <Link href='/galleri'><A>Tilbake</A></Link>
+      
+      <Link href='/galleri'><a><BackArrow/></a></Link>
         {result.map(({_id, imageUrl, title, beskrivelse}) => (
                     <Container key={_id}>
                       <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain"/></Div>

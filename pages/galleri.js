@@ -18,6 +18,7 @@ const Galleri = ({result = []}) => {
                       query: { slug: `${slug.current}`}}} passHref>
                       <a><Card>
                         <Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="cover"/> 
+                        <div><p>{title}</p></div>
                       </Card></a>
                     </Link>))}
           </Grid>
