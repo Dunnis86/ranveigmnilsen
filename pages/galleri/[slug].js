@@ -25,9 +25,8 @@ const A = styled.a`
 `;
 
 const Div = styled.div`
-  @media(min-width: 576px) {
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
-  }
+    filter: drop-shadow(0 10px 7px rgba(0, 0, 0, 0.3));
+    margin: 1rem;
 `;
 
 const Textcontainer = styled.div`

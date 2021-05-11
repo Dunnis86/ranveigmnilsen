@@ -8,6 +8,9 @@ const Icon = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+  @media(max-width: 576px) {
+    height: 2.5rem;
+  }
 `;
 
 const Arrow = styled.div`
