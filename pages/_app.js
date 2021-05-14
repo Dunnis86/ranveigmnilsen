@@ -51,6 +51,11 @@ p {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+button {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 `;

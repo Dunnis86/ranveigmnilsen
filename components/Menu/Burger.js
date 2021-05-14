@@ -16,6 +16,7 @@ const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 11;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   @media (max-width: 576px){
     position: relative;
     justify-self: center;

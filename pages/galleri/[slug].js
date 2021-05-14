@@ -42,7 +42,7 @@ const Galleri = ({result = []}) => {
     return (
       <Layout>
       
-      <Link href='/galleri'><a><BackArrow/></a></Link>
+      <Link href='/'><a><BackArrow/></a></Link>
         {result.map(({_id, imageUrl, title, beskrivelse}) => (
                     <Container key={_id}>
                       <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain"/></Div>

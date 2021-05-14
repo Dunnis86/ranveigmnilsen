@@ -1,5 +1,5 @@
 const previewSecret = 'MAMMA_SECRET' 
-const projectUrl = 'http://localhost:3000'
+const projectUrl = 'https://ranveigmnilsen.vercel.app/'
 
 export default function resolveProductionUrl(document) {
   return `${projectUrl}/api/preview?secret=${previewSecret}`

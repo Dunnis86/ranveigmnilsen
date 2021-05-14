@@ -57,8 +57,8 @@ const A = styled.a`
 const Menu = ({open}) => {
     return (
       <StyledMenu open={open}>
-        <Link href="/"><a>Hjem</a></Link>
-        <Link href="/galleri"><a>Galleri</a></Link>
+        <Link href="/"><a>Galleri</a></Link>
+        <Link href="/om"><a>Om meg</a></Link>
         <Link href="/kontakt"><a>Kontakt</a></Link>
         <A href='https://www.instagram.com/bilderranveigm/'><img src='../instagram.svg'/></A>
       </StyledMenu>

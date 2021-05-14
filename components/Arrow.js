@@ -47,16 +47,13 @@ const Arrow = styled.div`
 
   &:hover {
         opacity: .7;
-        }
-    }
+  }
   
   &:active {
   opacity: 0;
   transform: translateX(-20px);
 }
-
 `;
-
 
 const BackArrow = () => {
   return (
