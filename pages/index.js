@@ -37,19 +37,10 @@ export async function getStaticProps (context) {
       'imageUrl': bilde }`;
 
   const result = await client.fetch(query)
-  
-  if (!result) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    }
-  }
 
   return {
     props: {
-      result,
+      result, revalidate: 60
     }
   }
 }

@@ -74,18 +74,10 @@ export async function getStaticProps ({params: {slug}}) {
         'beskrivelse': description,
         'imageUrl': bilde }`;
     const result = await client.fetch(query, { slug })
-    if (!result) {
-      return {
-        redirect: {
-          destination: '/',
-          permanent: false,
-        },
-      }
-    }
-  
+
     return {
       props: {
-        result,
+        result, revalidate: 60
       }
     }
   }

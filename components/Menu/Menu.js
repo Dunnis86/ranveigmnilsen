@@ -19,9 +19,15 @@ const StyledMenu = styled.nav`
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
   
+  @media screen and (orientation: landscape) {
+    width: 50%;
+  }
+
   @media (max-width: 576px) {
     width: 100%;
   }
+
+  
 
   a {
     font-size: 2rem;
@@ -31,6 +37,11 @@ const StyledMenu = styled.nav`
     color: black;
     text-decoration: none;
     transition: color 0.3s linear;
+
+    @media screen and (orientation: landscape) {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    }
     
     @media (max-width: 576px) {
       font-size: 1.5rem;
@@ -40,6 +51,8 @@ const StyledMenu = styled.nav`
     &:hover {
       color: red;
     }
+   
+
   }
 `;
 
@@ -47,6 +60,12 @@ const A = styled.a`
   img {
       max-width: 20%;
     }
+  @media screen and (orientation: landscape) {
+    img {
+      max-width: 10%;
+    }
+  }
+
   @media (max-width: 576px) {
     img {
       max-width: 10%;
@@ -57,7 +76,7 @@ const A = styled.a`
 const Menu = ({open}) => {
     return (
       <StyledMenu open={open}>
-        <Link href="/"><a>Galleri</a></Link>
+        <Link href="/"><a>Hjem</a></Link>
         <Link href="/om"><a>Om meg</a></Link>
         <Link href="/kontakt"><a>Kontakt</a></Link>
         <A href='https://www.instagram.com/bilderranveigm/'><img src='../instagram.svg'/></A>
