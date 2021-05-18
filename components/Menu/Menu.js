@@ -9,7 +9,7 @@ const StyledMenu = styled.nav`
   justify-content: center;
   align-content: center;
   background: white;
-  height: 100vh;
+  height: 100%;
   text-align: left;
   padding: 2rem;
   top: 0;
@@ -18,12 +18,8 @@ const StyledMenu = styled.nav`
   opacity: 80%;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
-  
-  @media screen and (orientation: landscape) {
-    width: 50%;
-  }
 
-  @media (max-width: 576px) {
+  @media (max-width: 567px) {
     width: 100%;
   }
 
@@ -38,9 +34,11 @@ const StyledMenu = styled.nav`
     text-decoration: none;
     transition: color 0.3s linear;
 
-    @media screen and (orientation: landscape) {
-    font-size: 1.5rem;
-    padding: 1rem 0;
+    @media (max-width: 823px)
+      and (min-width: 568px)
+      and (orientation: landscape) {
+        font-size: 1.5rem;
+        padding: 1rem 0;
     }
     
     @media (max-width: 576px) {
@@ -60,13 +58,8 @@ const A = styled.a`
   img {
       max-width: 20%;
     }
-  @media screen and (orientation: landscape) {
-    img {
-      max-width: 10%;
-    }
-  }
-
-  @media (max-width: 576px) {
+  
+  @media (max-width: 567px) {
     img {
       max-width: 10%;
     }

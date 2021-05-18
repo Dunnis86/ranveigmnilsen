@@ -10,6 +10,8 @@
   "dependencies": {
     "@sanity/client": "^2.2.6",
     "@sanity/image-url": "^0.140.22",
+    "@sendgrid/mail": "^7.4.4",
+    "dotenv": "^9.0.2",
     "groq": "^2.2.6",
     "next": "10.0.7",
     "next-sanity-image": "^2.0.0",

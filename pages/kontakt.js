@@ -66,53 +66,108 @@ const TextArea = styled.textarea`
 `;
 
 
-export default function SectionContact () {
-    const [allValues, setAllValues] = useState({
+const Kontakt = () => {
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null }
+  })
+
+  const [inputs, setInputs] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const handleResponse = (status, msg) => {
+    if (status === 200) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg }
+      })
+      setInputs({
         name: '',
         email: '',
         message: ''
-     });
-    const handleInputChange = (event) => {
-        setAllValues({...allValues, [event.target.name]: event.target.value})
-    };
-
-    const encode = (data) => {
-      return Object.keys(data)
-          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-          .join("&");
-    }
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const options = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...allValues })
-      }
-      fetch("/", options)
-      .then(function (response) {
-        window.location.assign('/kontakt-takk/');
       })
-      .catch(function (error) {
-        console.log(error);
-      });
-    };
+    } else {
+      setStatus({
+        info: { error: true, msg: msg }
+      })
+    }
+  }
+
+  const handleOnChange = e => {
+    e.persist()
+    setInputs(prev => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null }
+    })
+  }
+
+  const handleOnSubmit = async e => {
+    e.preventDefault()
+    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(inputs)
+    })
+    const text = await res.text()
+    handleResponse(res.status, text)
+  }
     return (
       <Layout>
         <Container>
         <Grid>
             <H2>Kontakskjema</H2>
             <P>Benytt skjemaet dersom du har spørsmål eller er interessert i noen av bildene.</P>
-            <Form name='contact' data-netlify="true" onSubmit={handleSubmit}>
-                <label htmlFor="contact-form-name">Navn</label>
-                <Input type="text" name="name" value={allValues.name} onChange={handleInputChange}/>
-                <label htmlFor="contant-form-email">Epost</label>
-                <Input type="email" name="email" value={allValues.email} onChange={handleInputChange}/>
-                <label htmlFor="contant-form-message">Beskjed</label>
-                <TextArea name="message" value={allValues.message} onChange={handleInputChange} />
-                <Button type="submit">Send</Button>
+            <Form onSubmit={handleOnSubmit}>
+                <label htmlFor="name">Navn</label>
+                <Input 
+                id="name" 
+                type="name" 
+                onChange={handleOnChange} 
+                required 
+                value={inputs.name} />
+                <label htmlFor="email">Epost</label>
+                <Input
+                id="email" 
+                type="email"
+                onChange={handleOnChange} 
+                required
+                value={inputs.email} />
+                <label htmlFor="message">Beskjed</label>
+                <TextArea 
+                id="message"
+                onChange={handleOnChange} 
+                value={inputs.message}  />
+                <Button type="submit" disabled={status.submitting}>
+                  {!status.submitting
+                    ? !status.submitted
+                    ? 'Send'
+                    : 'Sendt'
+                    : 'Sender...'}
+                </Button>
             </Form>
+            {status.info.error && (
+              <div className="error">Error: {status.info.msg}</div>
+            )}
+            {!status.info.error && status.info.msg && (
+              <div className="success">{status.info.msg}</div>
+            )}
         </Grid>
         </Container>
       </Layout>
     );
 }
+
+export default Kontakt;
