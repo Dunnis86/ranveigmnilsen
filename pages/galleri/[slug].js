@@ -77,8 +77,9 @@ export async function getStaticProps ({params: {slug}}) {
 
     return {
       props: {
-        result, revalidate: 60
-      }
+        result 
+      },
+      revalidate: 60
     }
   }
 
