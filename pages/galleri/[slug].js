@@ -36,52 +36,54 @@ const Textcontainer = styled.div`
   }
 `;
 
-const Galleri = ({result = []}) => {
+const Galleri = (props) => {
+    const { _id, imageUrl, title, beskrivelse } = props.data.result
     const router = useRouter()
     const { slug } = router.query
     return (
       <Layout>
-      
       <Link href='/'><a><BackArrow/></a></Link>
-        {result.map(({_id, imageUrl, title, beskrivelse}) => (
-                    <Container key={_id}>
-                      <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain"/></Div>
-                      <Textcontainer>
-                        <p><b>Tittel:</b> {title}</p>
-                        <p><b>Beskrivelse:</b> {beskrivelse}</p> 
-                      </Textcontainer> 
-                    </Container>))}
+        <Container key={_id}>
+          <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain"/></Div>
+          <Textcontainer>
+            <p><b>Tittel:</b> {title}</p>
+            <p><b>Beskrivelse:</b> {beskrivelse}</p> 
+          </Textcontainer> 
+        </Container>
       </Layout>
     )
 }
 
 export async function getStaticPaths() {
-    const query = groq`*[_type == "galleri"]{slug}`;
+    const query = groq`*[_type == "galleri" && defined(slug.current)][].slug.current`;
     const result = await client.fetch(query)
-    const paths = result.map(child => 
-      ({params: {slug: child.slug.current}}))
+    const paths = result.map(slug => 
+      ({params: {slug}}))
     return { 
-      paths, fallback: false
+      paths: paths, 
+      fallback: false
     };
 }
 
 
-export async function getStaticProps ({params: {slug}}) {
-    const query = groq`*[_type == "galleri" && slug.current == $slug]{ 
+export async function getStaticProps ({params}) {
+
+    const query = groq`*[_type == "galleri" && slug.current == $slug][0]{ 
         _id,
         'title': title,
         'kunstner': author,
         'beskrivelse': description,
         'imageUrl': bilde }`;
-    const result = await client.fetch(query, { slug })
-
+    const result = await client.fetch(query, { slug: params.slug })
     return {
       props: {
-        result 
+        data: {
+          result
+        },
       },
-      revalidate: 60
+      }
     }
-  }
+  
 
 
 export default Galleri;
