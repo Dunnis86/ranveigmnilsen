@@ -60,32 +60,14 @@ button {
 
 `;
 
-function MyApp({ Component, pageProps, title, description, keywords, author }) {
+function MyApp({ Component, pageProps }) {
   return ( 
     <>
-    <Head>
-      <link rel="preconnect" href="https://fonts.gstatic.com"/>
-      <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&family=Oswald:wght@300;400;500;700&family=Tienne:wght@400;700&display=swap" rel="stylesheet"/>
-      <meta charSet="UTF-8" />
-      <title>{title}</title>
-      <meta name='description' content={description}/>
-      <meta name='keywords' content={keywords}/>
-      <meta name='author' content={author}/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </Head>
     <GlobalStyle />
     <Component {...pageProps} />
     </>
   )
 }
-
-MyApp.defaultProps = {
-  title: 'Ranveig M Nilsen',
-  description: 'Webgalleri med abstrakt kunst',
-  keywords: 'abstrakt, kunst, maling, maleri',
-  author: 'Audun Nilsen'
-}
-
 
 export default MyApp
 

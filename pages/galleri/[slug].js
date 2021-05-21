@@ -41,7 +41,7 @@ const Galleri = (props) => {
     const router = useRouter()
     const { slug } = router.query
     return (
-      <Layout>
+      <Layout title={`Ranveig M Nilsen - ${title}`} description={beskrivelse}>
       <Link href='/'><a><BackArrow/></a></Link>
         <Container key={_id}>
           <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain"/></Div>
