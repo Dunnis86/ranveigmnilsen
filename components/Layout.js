@@ -13,7 +13,7 @@ const Container = styled.div`
 `; 
 
 
-export default function Layout({children, title, description, imageUrl, keywords, author}) {
+export default function Layout({children, title, description, image, keywords, author}) {
     return (
         <>
         <Head>
@@ -30,7 +30,7 @@ export default function Layout({children, title, description, imageUrl, keywords
             <meta name="og:description" property="og:description" content={description} />
             <meta property="og:site_name" content="Ranveig M Nilsen" />
             <meta property="og:url" content="www.ranveigmnilsen.com" />  
-            <meta property="og:image" content={imageUrl} />     
+            <meta property="og:image" content={image} />     
             <link rel="canonical" href="" />
         </Head>
             <Navigation/>
@@ -44,7 +44,7 @@ export default function Layout({children, title, description, imageUrl, keywords
 Layout.defaultProps = {
     title: 'Ranveig M Nilsen',
     description: 'Webgalleri med abstrakt kunst',
-    imageUrl: "/meta_og.png",
+    image: "/meta_og.png",
     keywords: 'abstrakt, kunst, maling, maleri',
     author: 'Audun Nilsen'
   }
