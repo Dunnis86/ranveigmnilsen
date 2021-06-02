@@ -29,9 +29,9 @@ export default function Layout({children, title, description, image, keywords, a
             <meta name="og:title" property="og:title" content={title} />
             <meta name="og:description" property="og:description" content={description} />
             <meta property="og:site_name" content="Ranveig M Nilsen" />
-            <meta property="og:url" content="www.ranveigmnilsen.com" />  
+            <meta property="og:url" content="ranveigmnilsen.com" />  
             <meta property="og:image" content={image} />     
-            <link rel="canonical" href="" />
+            <link rel="canonical" href="ranveigmnilsen.com" />
         </Head>
             <Navigation/>
             <Container>
