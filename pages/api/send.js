@@ -7,7 +7,7 @@ export default async function (req, res) {
 
   const content = {
     to: process.env.TO_MAIL_ADDRESS, 
-    from: process.env.SENDER, 
+    from: 'post@ranveigmnilsen.com', 
     subject: `New Message From - ${name} - ${email}`,
     text: message,
     html: `<p>${message}</p>`
