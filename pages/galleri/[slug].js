@@ -37,17 +37,18 @@ const Textcontainer = styled.div`
 `;
 
 const Galleri = (props) => {
-    const { _id, imageUrl, title, beskrivelse, url } = props.data.result
+    const { _id, imageUrl, title, beskrivelse, url, dimensjoner } = props.data.result
     const router = useRouter()
     const { slug } = router.query
     return (
       <Layout title={`Ranveig M Nilsen - ${title}`} description={beskrivelse} image={url}>
       <Link href='/'><a><BackArrow/></a></Link>
         <Container key={_id}>
-          <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain"/></Div>
+          <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain" alt={`Bilde av ${title}`}/></Div>
           <Textcontainer>
             <p><b>Tittel:</b> {title}</p>
             <p><b>Beskrivelse:</b> {beskrivelse}</p> 
+            <p><b>Dimensjoner:</b> {dimensjoner}</p> 
           </Textcontainer> 
         </Container>
       </Layout>
@@ -73,6 +74,7 @@ export async function getStaticProps ({params}) {
         'title': title,
         'kunstner': author,
         'beskrivelse': description,
+        'dimensjoner': dimensions,
         'imageUrl': bilde,
         'url': bilde.asset->url}`;
     const result = await client.fetch(query, { slug: params.slug })

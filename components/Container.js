@@ -3,8 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   margin: 0 auto;
-  width: 80%;
-  max-width: 1400px;
+  max-width: 1900px;
 `;
 
 const Main = ({ children }) => (

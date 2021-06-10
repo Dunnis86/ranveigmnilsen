@@ -8,8 +8,15 @@ const Grid = styled.div`
   padding: auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto; 
-  justify-content: center;
+  grid-template-rows: auto;
+  justify-items: center;
+`;
+
+const Wrapper = styled.div`
+  justify-items: center;
+  @media(max-width: 576px){
+      margin: 0 2rem;
+    }
 `;
 
 const H2 = styled.h2`
@@ -17,7 +24,6 @@ const H2 = styled.h2`
   font-size: 2rem;
   letter-spacing: -0.03em;
   color: black;
-  justify-content: center;
   margin-bottom: auto;
   @media(max-width: 576px){
         font-size: 1.5rem;
@@ -26,16 +32,15 @@ const H2 = styled.h2`
 `;
 
 const P = styled.p`
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
 `;
 
 const Form = styled.form`
     top: 6rem;
     height: 25rem;
-    width: 40%;
+    width: 500px;
     z-index: 5;
-    justify-self: left;
     @media(max-width: 576px) {
         width: 100%;
     }
@@ -125,11 +130,12 @@ const Kontakt = () => {
     handleResponse(res.status, text)
   }
     return (
-      <Layout>
+      <Layout title={'Ranveig M Nilsen - Kontakt'} description={'Underside med kontaktskjema'}>
         <Container>
         <Grid>
-            <H2>Kontakskjema</H2>
-            <P>Benytt skjemaet dersom du har spørsmål eller er interessert i noen av bildene.</P>
+            <Wrapper>
+              <H2>Kontakskjema</H2>
+              <P>Benytt skjemaet dersom du har spørsmål eller er interessert i noen av bildene.</P>
             <Form onSubmit={handleOnSubmit}>
                 <label htmlFor="name">Navn</label>
                 <Input 
@@ -164,6 +170,7 @@ const Kontakt = () => {
             {!status.info.error && status.info.msg && (
               <div className="success">{status.info.msg}</div>
             )}
+            </Wrapper>
         </Grid>
         </Container>
       </Layout>

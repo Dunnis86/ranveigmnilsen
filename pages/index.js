@@ -6,22 +6,25 @@ import Grid from '@/components/Gallery/GalleryGrid.js';
 import Link from 'next/link';
 import Card from '@/components/Gallery/Card.js';
 import Image from '@/components/Gallery/Image.js';
+import Container from '@/components/Container.js';
 
 
 const Home = ({result = []}) => {
     return (
-      <Layout>
-          <Grid>           
+      <Layout title='Ranveig M Nilsen - Hjem'>
+        <Container>
+            <Grid>           
                 {result.map(({_id, imageUrl, slug, title}) => (
                   <Link key={_id} href={{
                       pathname: '/galleri/[slug]',
                       query: { slug: `${slug.current}`}}} passHref>
                       <a><Card>
-                        <Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="cover"/> 
+                        <Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="cover" alt={`Bilde av ${title}`}/> 
                         <div><p>{title}</p></div>
                       </Card></a>
                     </Link>))}
-          </Grid>
+            </Grid>
+          </Container>
       </Layout>
     )
 }
@@ -42,7 +45,7 @@ export async function getStaticProps (context) {
     props: {
       result 
     },
-    revalidate: 600
+    revalidate: 600, 
   }
 }
 

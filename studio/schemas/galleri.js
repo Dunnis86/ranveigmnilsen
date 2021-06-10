@@ -31,6 +31,11 @@ export default {
         type: 'text'
       },
       {
+        title: 'Dimensjoner',
+        name: 'dimensions',
+        type: 'string'
+      },
+      {
         title: 'Kunstner',
         name: 'author',
         // A reference is a way to point to another document
