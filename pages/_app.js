@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
 :root {
   --fontlogo: 'Oswald', sans-serif;
-  --fontheading: 'Tienne', serif;
+  --fontheading: 'Martel Sans', sans-serif;  /*'Tienne', serif;*/
   --fontbody: 'Martel Sans', sans-serif;
 }
 

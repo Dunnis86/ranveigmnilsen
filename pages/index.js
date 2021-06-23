@@ -19,7 +19,7 @@ const Home = ({result = []}) => {
                       pathname: '/galleri/[slug]',
                       query: { slug: `${slug.current}`}}} passHref>
                       <a><Card>
-                        <Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="cover" alt={`Bilde av ${title}`}/> 
+                        <Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="cover" alt={`Bilde av ${title}`} placeholder="blur"/> 
                         <div><p>{title}</p></div>
                       </Card></a>
                     </Link>))}

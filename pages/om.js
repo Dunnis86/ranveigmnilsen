@@ -50,7 +50,7 @@ const Block = styled(BlockContent)`
 export default function Home(props) {
   const { title, imageUrl, description = []} = props.data.result
   return (
-    <Layout title={'Ranveig M Nilsen - Om Ranveig'}>
+    <Layout title={'Ranveig M Nilsen - Om Ranveig'} description={'En kort beskrivelse av Ranveig M Nilsen'}>
       <Container>
       <Wrapper>
         <Heading>{title}</Heading>   

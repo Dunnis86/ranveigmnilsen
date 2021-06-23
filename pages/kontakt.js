@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '@/components/Button.js';
 import Layout from '@/components/Layout.js';
 import Container from '@/components/Container.js';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const Grid = styled.div`
   padding: auto;
@@ -136,7 +137,7 @@ const Kontakt = () => {
             <Wrapper>
               <H2>Kontakskjema</H2>
               <P>Benytt skjemaet dersom du har spørsmål eller er interessert i noen av bildene.</P>
-            <Form onSubmit={handleOnSubmit}>
+            <Form onSubmit={handleOnSubmit}>  
                 <label htmlFor="name">Navn</label>
                 <Input 
                 id="name" 
@@ -156,6 +157,10 @@ const Kontakt = () => {
                 id="message"
                 onChange={handleOnChange} 
                 value={inputs.message}  />
+                <HCaptcha
+                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+                onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
+                />
                 <Button type="submit" disabled={status.submitting}>
                   {!status.submitting
                     ? !status.submitted
