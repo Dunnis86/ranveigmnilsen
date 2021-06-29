@@ -15,7 +15,7 @@ const Grid = styled.div`
   grid-template-rows: auto;
   grid-gap: 2rem;
   justify-content: center;
-  @media(max-width: 576px) {
+  @media(max-width: 768px) {
     grid-template-columns: 1fr
   }
 `;
@@ -28,9 +28,6 @@ const Wrapper = styled.div`
 
 const Heading = styled.h2`
   margin: 0 0 1rem 0;
-  @media(max-width: 576px) {
-    margin: 0 0 1rem 0;
-  }
 `;
 
 const Img = styled(Image)`
@@ -42,7 +39,7 @@ const Blockholder = styled.div`
 `;
 
 const Block = styled(BlockContent)`
-  @media(max-width: 576px) {
+  @media(max-width: 768px) {
     margin: 1rem 0 0 0;
   }
 `;
