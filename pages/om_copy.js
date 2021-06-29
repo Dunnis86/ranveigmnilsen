@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import {fadeIn} from '@/components/StyledComp/fadeIn';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
-import { useState, useCallback, useEffect } from 'react';
 
 const Grid = styled.div`
   display: grid;
@@ -27,7 +26,7 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h2`
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
   @media(max-width: 576px) {
     margin: 0 0 1rem 0;
   }
@@ -35,71 +34,40 @@ const Heading = styled.h2`
 
 const Img = styled(Image)`
   animation: ${fadeIn} 1s ease-out;
+  @media(min-width: 576px) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
 `;
 
 const Blockholder = styled.div`
   animation: ${fadeIn} 1s ease-out;
-`;
-
-const Block = styled(BlockContent)`
-  @media(max-width: 576px) {
-    margin: 1rem 0 0 0;
+  @media(min-width: 576px) {
+    padding: 5rem;
   }
 `;
 
-const useMediaQuery = (width) => {
-  const [targetReached, setTargetReached] = useState(false);
-
-  const updateTarget = useCallback((e) => {
-    if (e.matches) {
-      setTargetReached(true);
-    } else {
-      setTargetReached(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
-    console.log(media)
-    media.addEventListener('change', updateTarget);
-
-    // Check on mount (callback is not called until a change occurs)
-    if (media.matches) {
-      setTargetReached(true);
-    }
-
-    return () => media.removeEventListener('change', updateTarget);
-  }, []);
-
-  return targetReached;
-};
+const Block = styled(BlockContent)`
+  @media(min-width: 576px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+  }
+`;
 
 
 export default function Home(props) {
   const { title, imageUrl, description = []} = props.data.result
-  const isBreakpoint = useMediaQuery(768)
   return (
     <Layout title={'Ranveig M Nilsen - Om Ranveig'} description={'En kort beskrivelse av Ranveig M Nilsen'}>
       <Container>
       <Wrapper>
         <Grid>
-          { isBreakpoint ? (
-            <>
-            <Blockholder>
-              <Heading>{title}</Heading> 
-              <Img {...useNextSanityImage(client, imageUrl)} height={800} width={600} objectFit='cover'/>
-              <Block blocks={description} {...client.config()}/>
-            </Blockholder>
-            </>
-          ) : (
-            <>
-            <Blockholder>
-              <Heading>{title}</Heading> 
-              <Block blocks={description} {...client.config()}/>
-            </Blockholder>
-            <Img {...useNextSanityImage(client, imageUrl)} height={800} width={600} objectFit='cover'/>
-            </>
-            )}
+          <Blockholder>
+            <Heading>{title}</Heading> 
+            <Block blocks={description} {...client.config()}/>
+          </Blockholder>
+          <Img {...useNextSanityImage(client, imageUrl)} height={800} width={600} objectFit='cover'/>
         </Grid>
         </Wrapper> 
       </Container>

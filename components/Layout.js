@@ -44,7 +44,7 @@ export default function Layout({children, title, description, image, keywords, a
 Layout.defaultProps = {
     title: 'Ranveig M Nilsen',
     description: 
-    'Webgalleri som viser min kunst. Bildene er hovedsakelig malt med akrylmaling, og redskapene er pensel, palettkniv og skrape (bankkort). Maleprosessen starter med en ide eller et ønske om å formidle noe. Det kan bli figurativt eller abstrakt, noe jeg sjelden vet på forhånd. Prosessen er som en spennende reise som jeg ikke vet hvor ender, men med et resultat som uttrykker mine tanker og følelser.',
+    'ranveigmnilsen.com er et webgalleri som viser min kunst. Bildene er hovedsakelig malt med akrylmaling, og redskapene er pensel, palettkniv og skrape (bankkort). Maleprosessen starter med en ide eller et ønske om å formidle noe. Det kan bli figurativt eller abstrakt, noe jeg sjelden vet på forhånd.',
     image: "/meta_og.png",
     keywords: 'abstrakt, figurativ, kunst, maleprosess, maling, maleri, akrylmaling, pensel, skrape, tanker, følelser',
     author: 'Audun Nilsen'
