@@ -42,7 +42,7 @@ const Galleri = (props) => {
     const { slug } = router.query
     return (
       <Layout title={`Ranveig M Nilsen - ${title}`} description={beskrivelse} image={url}>
-      <Link href='/'><a><BackArrow/></a></Link>
+      <Link href='/' ><a><BackArrow/></a></Link>
         <Container key={_id}>
           <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain" alt={`Bilde av ${title}`}/></Div>
           <Textcontainer>

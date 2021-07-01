@@ -18,7 +18,7 @@ export default function Layout({children, title, description, image, keywords, a
         <>
         <Head>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
-            <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&family=Oswald:wght@300;400;500;700&family=Tienne:wght@400;700&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&family=Oswald:wght@300;400;500;700&family=Tienne:wght@400;700&Numans&family=Work+Sans:wght@100&display=swap" rel="stylesheet"/>
             <meta charSet="UTF-8" />
             <title>{title}</title>
             <meta name='description' content={description}/>

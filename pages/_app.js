@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import styled, { createGlobalStyle } from 'styled-components';
+import { useRef } from 'react';
+import UserContext from '@/components/Scrollcontext'
 
 const GlobalStyle = createGlobalStyle`
 
 :root {
   --fontlogo: 'Oswald', sans-serif;
-  --fontheading: 'Martel Sans', sans-serif;  /*'Tienne', serif;*/
-  --fontbody: 'Martel Sans', sans-serif;
+  --fontheading: 'Work Sans', sans-serif; /*'Martel Sans', sans-serif;  'Tienne', serif;*/
+  --fontbody: 'Numans', sans-serif; /*'Martel Sans', sans-serif;*/
 }
 
 * {
@@ -60,11 +62,17 @@ button {
 
 `;
 
+
 function MyApp({ Component, pageProps }) {
+  const scrollRef = useRef({
+    scrollPos: 0
+});
   return ( 
     <>
     <GlobalStyle />
-    <Component {...pageProps} />
+    <UserContext.Provider value={{ scrollRef: scrollRef }}>
+      <Component {...pageProps} />
+    </UserContext.Provider>
     </>
   )
 }

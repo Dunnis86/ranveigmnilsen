@@ -57,7 +57,6 @@ const useMediaQuery = (width) => {
 
   useEffect(() => {
     const media = window.matchMedia(`(max-width: ${width}px)`);
-    console.log(media)
     media.addEventListener('change', updateTarget);
 
     // Check on mount (callback is not called until a change occurs)
