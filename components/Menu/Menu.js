@@ -23,7 +23,6 @@ const StyledMenu = styled.nav`
     width: 100%;
   }
 
-  
 
   a {
     font-size: 2rem;
