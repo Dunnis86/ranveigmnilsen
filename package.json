@@ -8,6 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@hcaptcha/react-hcaptcha": "^0.3.6",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.2.6",
@@ -23,7 +27,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
-    "@svgr/webpack": "^5.5.0",
     "babel-plugin-styled-components": "^1.12.0"
   }
 }

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { bool } from 'prop-types';
 import Link from 'next/link';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StyledMenu = styled.nav`
   position: fixed;
@@ -53,16 +55,11 @@ const StyledMenu = styled.nav`
   }
 `;
 
-const A = styled.a`
-  img {
-      max-width: 20%;
-    }
-  
-  @media (max-width: 567px) {
-    img {
-      max-width: 10%;
-    }
-  }
+const Icon = styled(FontAwesomeIcon)`
+  margin: 2rem 0;
+  @media(max-width: 576px) {
+  align-self: center;
+}
 `;
 
 const Menu = ({open}) => {
@@ -71,7 +68,7 @@ const Menu = ({open}) => {
         <Link href="/"><a>Hjem</a></Link>
         <Link href="/om"><a>Om meg</a></Link>
         <Link href="/kontakt"><a>Kontakt</a></Link>
-        <A href='https://www.instagram.com/bilderranveigm/'><img src='../instagram.svg'/></A>
+        <Icon icon={faInstagram} size="2x"/>
       </StyledMenu>
     )
   }
