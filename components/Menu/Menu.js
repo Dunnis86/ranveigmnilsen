@@ -56,7 +56,6 @@ const StyledMenu = styled.nav`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  margin: 2rem 0;
   @media(max-width: 576px) {
   align-self: center;
 }
@@ -68,7 +67,7 @@ const Menu = ({open}) => {
         <Link href="/"><a>Hjem</a></Link>
         <Link href="/om"><a>Om meg</a></Link>
         <Link href="/kontakt"><a>Kontakt</a></Link>
-        <Icon icon={faInstagram} size="2x"/>
+        <a href="https://www.instagram.com/bilderranveigm/"><Icon icon={faInstagram}/></a>
       </StyledMenu>
     )
   }

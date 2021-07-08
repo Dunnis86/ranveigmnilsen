@@ -2,18 +2,22 @@ import client from '../client';
 import groq from 'groq';
 import Layout from '@/components/Layout.js';
 import Container from'@/components/Container.js';
-import { useNextSanityImage } from 'next-sanity-image';
 import styled from 'styled-components';
 import {fadeIn} from '@/components/StyledComp/fadeIn';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import { useState, useCallback, useEffect } from 'react';
+import imageUrlBuilder from '@sanity/image-url'
+
+const urlFor = (source) => {
+  return imageUrlBuilder(client).image(source)
+}
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   justify-content: center;
   @media(max-width: 768px) {
     grid-template-columns: 1fr
@@ -28,6 +32,20 @@ const Wrapper = styled.div`
 
 const Heading = styled.h2`
   margin: 0 0 1rem 0;
+`;
+
+const ImgHolder = styled.div`
+  position: relative;
+  height: 600px;
+  @media(max-width: 1200px) {
+    height: 500px;
+  }
+  @media(max-width: 768px) {
+    height: 400px;
+  }
+  @media(max-width: 576px) {
+    height: 300px;
+  }
 `;
 
 const Img = styled(Image)`
@@ -73,6 +91,7 @@ const useMediaQuery = (width) => {
 
 export default function Home(props) {
   const { title, imageUrl, description = []} = props.data.result
+  console.log(imageUrl)
   const isBreakpoint = useMediaQuery(768)
   return (
     <Layout title={'Ranveig M Nilsen - Om Ranveig'} description={'En kort beskrivelse av Ranveig M Nilsen'}>
@@ -83,7 +102,7 @@ export default function Home(props) {
             <>
             <Blockholder>
               <Heading>{title}</Heading> 
-              <Img {...useNextSanityImage(client, imageUrl)} height={800} width={600} objectFit='cover'/>
+              <ImgHolder><Img src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur"/></ImgHolder>
               <Block blocks={description} {...client.config()}/>
             </Blockholder>
             </>
@@ -93,7 +112,7 @@ export default function Home(props) {
               <Heading>{title}</Heading> 
               <Block blocks={description} {...client.config()}/>
             </Blockholder>
-            <Img {...useNextSanityImage(client, imageUrl)} height={800} width={600} objectFit='cover'/>
+            <ImgHolder><Img src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur"/></ImgHolder>
             </>
             )}
         </Grid>

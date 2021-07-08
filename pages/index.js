@@ -1,6 +1,5 @@
 import client from '../client';
 import groq from 'groq';
-import { useNextSanityImage } from 'next-sanity-image';
 import Layout from '@/components/Layout.js';
 import Grid from '@/components/Gallery/GalleryGrid.js';
 import Link from 'next/link';
@@ -10,7 +9,17 @@ import Container from '@/components/Container.js';
 import UserContext from '@/components/Scrollcontext';
 import { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import imageUrlBuilder from '@sanity/image-url'
+import styled from 'styled-components'
 
+const urlFor = (source) => {
+  return imageUrlBuilder(client).image(source)
+}
+
+const ImageHolder = styled.div`
+  position: relative;
+  height: 500px;
+`;
 
 const Home = ({result = []}) => {
   const { scrollRef } = useContext(UserContext);
@@ -39,7 +48,9 @@ const Home = ({result = []}) => {
                       pathname: '/galleri/[slug]',
                       query: { slug: `${slug.current}`}}} passHref>
                       <a><Card>
-                        <Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="cover" alt={`Bilde av ${title}`} placeholder="blur"/> 
+                        <ImageHolder>
+                          <Image blurDataURL={urlFor(imageUrl).height(300).url()} src={urlFor(imageUrl).url()} layout="fill" objectFit="cover" placeholder="blur" alt={`Bilde av ${title}`} placeholder="blur" />
+                        </ImageHolder> 
                         <div><p>{title}</p></div>
                       </Card></a>
                     </Link>))}
