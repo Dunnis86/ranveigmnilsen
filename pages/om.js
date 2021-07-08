@@ -3,7 +3,6 @@ import groq from 'groq';
 import Layout from '@/components/Layout.js';
 import Container from'@/components/Container.js';
 import styled from 'styled-components';
-import {fadeIn} from '@/components/StyledComp/fadeIn';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import { useState, useCallback, useEffect } from 'react';
@@ -49,11 +48,11 @@ const ImgHolder = styled.div`
 `;
 
 const Img = styled(Image)`
-  animation: ${fadeIn} 1s ease-out;
+  
 `;
 
 const Blockholder = styled.div`
-  animation: ${fadeIn} 1s ease-out;
+  
 `;
 
 const Block = styled(BlockContent)`

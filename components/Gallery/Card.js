@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import { fadeIn } from '../StyledComp/fadeIn';
 
 const Card = styled.div`
-    animation: ${fadeIn} 1s ease-out;
     position: relative;
     justify-items: center;
     align-items: center;
