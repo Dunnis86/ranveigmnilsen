@@ -13,11 +13,6 @@ const urlFor = (source) => {
   return imageUrlBuilder(client).image(source)
 }
 
-const ImageHolder = styled.div`
-  position: relative;
-  height: 500px;
-`;
-
 const A = styled.a`
   display: block;
   margin: 0 2rem;
@@ -33,11 +28,15 @@ const A = styled.a`
   }
 `;
 
-const Div = styled.div`
-    position: relative;
-    height: 800px;
-    filter: drop-shadow(0 10px 7px rgba(0, 0, 0, 0.3));
-    margin: 1rem;
+const ImageHolder = styled.div`
+  position: relative;
+  height: 600px;
+  filter: drop-shadow(0 10px 7px rgba(0, 0, 0, 0.3));
+  margin: 1rem;
+  @media(max-width: 576px) {
+    height: 400px;
+    margin: 2rem 1rem 1rem 1rem;
+  }
 `;
 
 const Textcontainer = styled.div`
@@ -55,7 +54,7 @@ const Galleri = (props) => {
       <Layout title={`Ranveig M Nilsen - ${title}`} description={beskrivelse} image={url}>
       <Link href='/'><a><BackArrow/></a></Link>
         <Container key={_id}>
-          <Div><Image blurDataURL={urlFor(imageUrl).height(300).url()} src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur" alt={`Bilde av ${title}`} placeholder="blur" /></Div>
+          <ImageHolder><Image blurDataURL={urlFor(imageUrl).height(300).url()} src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur" alt={`Bilde av ${title}`} placeholder="blur" /></ImageHolder>
           <Textcontainer>
             <p><b>Tittel:</b> {title}</p>
             <p><b>Beskrivelse:</b> {beskrivelse}</p> 
