@@ -91,7 +91,6 @@ const useMediaQuery = (width) => {
 
 export default function Home(props) {
   const { title, imageUrl, description = []} = props.data.result
-  console.log(imageUrl)
   const isBreakpoint = useMediaQuery(768)
   return (
     <Layout title={'Ranveig M Nilsen - Om Ranveig'} description={'En kort beskrivelse av Ranveig M Nilsen'}>
@@ -102,7 +101,7 @@ export default function Home(props) {
             <>
             <Blockholder>
               <Heading>{title}</Heading> 
-              <ImgHolder><Img src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur"/></ImgHolder>
+              <ImgHolder><Img blurDataURL={urlFor(imageUrl).height(300).url()} src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur"/></ImgHolder>
               <Block blocks={description} {...client.config()}/>
             </Blockholder>
             </>
@@ -112,7 +111,7 @@ export default function Home(props) {
               <Heading>{title}</Heading> 
               <Block blocks={description} {...client.config()}/>
             </Blockholder>
-            <ImgHolder><Img src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur"/></ImgHolder>
+            <ImgHolder><Img blurDataURL={urlFor(imageUrl).height(300).url()} src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur"/></ImgHolder>
             </>
             )}
         </Grid>

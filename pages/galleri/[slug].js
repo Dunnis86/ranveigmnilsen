@@ -2,12 +2,21 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components'; 
 import Link from 'next/link';
 import client from '../../client.js';
-import { useNextSanityImage } from 'next-sanity-image';
 import groq from 'groq';
 import Layout from '@/components/Layout.js';
 import Container from '@/components/Gallery/ImageContainer.js';
 import Image from '@/components/Gallery/IndividualImage.js';
 import BackArrow from '@/components/Arrow.js';
+import imageUrlBuilder from '@sanity/image-url'
+
+const urlFor = (source) => {
+  return imageUrlBuilder(client).image(source)
+}
+
+const ImageHolder = styled.div`
+  position: relative;
+  height: 500px;
+`;
 
 const A = styled.a`
   display: block;
@@ -25,6 +34,8 @@ const A = styled.a`
 `;
 
 const Div = styled.div`
+    position: relative;
+    height: 800px;
     filter: drop-shadow(0 10px 7px rgba(0, 0, 0, 0.3));
     margin: 1rem;
 `;
@@ -44,7 +55,7 @@ const Galleri = (props) => {
       <Layout title={`Ranveig M Nilsen - ${title}`} description={beskrivelse} image={url}>
       <Link href='/'><a><BackArrow/></a></Link>
         <Container key={_id}>
-          <Div><Image {...useNextSanityImage(client, imageUrl)} height={500} width={350} objectFit="contain" alt={`Bilde av ${title}`}/></Div>
+          <Div><Image blurDataURL={urlFor(imageUrl).height(300).url()} src={urlFor(imageUrl).url()} layout="fill" objectFit="contain" placeholder="blur" alt={`Bilde av ${title}`} placeholder="blur" /></Div>
           <Textcontainer>
             <p><b>Tittel:</b> {title}</p>
             <p><b>Beskrivelse:</b> {beskrivelse}</p> 
