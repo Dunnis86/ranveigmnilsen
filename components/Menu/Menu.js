@@ -64,9 +64,9 @@ const Icon = styled(FontAwesomeIcon)`
 const Menu = ({open}) => {
     return (
       <StyledMenu open={open}>
-        <Link href="/"><a>Hjem</a></Link>
-        <Link href="/om"><a>Om meg</a></Link>
-        <Link href="/kontakt"><a>Kontakt</a></Link>
+        <Link href="/"><a>Home</a></Link>
+        <Link href="/om"><a>About</a></Link>
+        <Link href="/kontakt"><a>Contact</a></Link>
         <a href="https://www.instagram.com/bilderranveigm/"><Icon icon={faInstagram}/></a>
       </StyledMenu>
     )

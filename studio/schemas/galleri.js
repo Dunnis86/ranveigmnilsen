@@ -1,6 +1,6 @@
 export default {
-    title: 'Galleri',
-    name: 'galleri',
+    title: 'Gallery',
+    name: 'gallery',
     type: 'document',
     fields: [
       {
@@ -17,8 +17,8 @@ export default {
         }
       },
       {
-        title: 'Bilde',
-        name: 'bilde',
+        title: 'Image',
+        name: 'image',
         type: 'image',
         options: {
             hotspot: true,
@@ -26,17 +26,17 @@ export default {
         }
       },
       {
-        title: 'Beskrivelse',
+        title: 'Description',
         name: 'description',
         type: 'text'
       },
       {
-        title: 'Dimensjoner',
+        title: 'Dimensions',
         name: 'dimensions',
         type: 'string'
       },
       {
-        title: 'Kunstner',
+        title: 'Artist',
         name: 'author',
         // A reference is a way to point to another document
         type: 'string',

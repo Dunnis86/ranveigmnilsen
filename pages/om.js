@@ -2,7 +2,7 @@ import client from '../client';
 import groq from 'groq';
 import Layout from '@/components/Layout.js';
 import Container from'@/components/Container.js';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import BlockContent from '@sanity/block-content-to-react';
 import Image from 'next/image';
 import { useState, useCallback, useEffect } from 'react';
@@ -33,9 +33,22 @@ const Heading = styled.h2`
   margin: 0 0 1rem 0;
 `;
 
+const appear = keyframes`
+  0% {
+   transform: translateY(-5%);
+   opacity: 0.1;
+  }
+  100% {
+   transform: translateY(0);
+   opacity: 1;
+  }
+`;
+
 const ImgHolder = styled.div`
   position: relative;
   height: 600px;
+  animation-name: ${appear};
+  animation-duration: 1s;
   @media(max-width: 1200px) {
     height: 500px;
   }
@@ -56,6 +69,8 @@ const Blockholder = styled.div`
 `;
 
 const Block = styled(BlockContent)`
+  animation-name: ${appear};
+  animation-duration: 1s;
   @media(max-width: 768px) {
     margin: 1rem 0 0 0;
   }

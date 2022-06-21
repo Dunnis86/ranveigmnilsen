@@ -1,16 +1,16 @@
 export default {
-  title: 'Profil',
+  title: 'Profile',
   name: 'profile',
   type: 'document',
   fields: [
     {
-      title: 'Tittel',
+      title: 'Title',
       name: 'title',
       type: 'string'
     },
     {
-      title: 'Bilde',
-      name: 'bilde',
+      title: 'Image',
+      name: 'image',
       type: 'image',
       options: {
         hotspot: true,
@@ -18,7 +18,7 @@ export default {
       }
     },
     {
-    title: 'Beskrivelse', 
+    title: 'Description', 
     name: 'description',
     type: 'array', 
     of: [{

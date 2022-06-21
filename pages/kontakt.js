@@ -135,8 +135,8 @@ const Kontakt = () => {
         <Container>
         <Grid>
             <Wrapper>
-              <H2>Kontakskjema</H2>
-              <P>Benytt skjemaet dersom du har spørsmål eller er interessert i noen av bildene.</P>
+              <H2>Contact Form</H2>
+              <P>Use the contact form in case you have any questions or are interested in some of the paintings.</P>
             <Form onSubmit={handleOnSubmit}>  
                 <label htmlFor="name">Navn</label>
                 <Input 
@@ -145,14 +145,14 @@ const Kontakt = () => {
                 onChange={handleOnChange} 
                 required 
                 value={inputs.name} />
-                <label htmlFor="email">Epost</label>
+                <label htmlFor="email">Email</label>
                 <Input
                 id="email" 
                 type="email"
                 onChange={handleOnChange} 
                 required
                 value={inputs.email} />
-                <label htmlFor="message">Beskjed</label>
+                <label htmlFor="message">Message</label>
                 <TextArea 
                 id="message"
                 onChange={handleOnChange} 
